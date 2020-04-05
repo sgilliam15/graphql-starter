@@ -1,15 +1,17 @@
 {
   "name": "node-graphql-starter",
   "version": "1.0.0",
-  "description": "A GraphQL server using Typescript Node, Prisma 2+ and Apollo Server",
+  "description": "Get Started with Prisma 2+ and Typescript",
   "author": "Steven R Gilliam Jr <steve@steveg.dev>",
   "main": "build/index.js",
   "scripts": {
     "start": "npm run serve",
     "build": "tsc && npm run lint",
+    "docker:build": "docker build -t ${npm_package_name}:${npm_package_version} .",
+    "docker:run": "docker run --rm ${npm_package_name}:${npm_package_version}",
     "serve": "node build/index.js",
     "lint": "tsc --noEmit && eslint \"**/*.{js,ts}\" --quiet --fix",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "async": "^3.1.0",
