@@ -3,35 +3,42 @@
   "version": "1.0.0",
   "description": "Get Started with Prisma 2+ and Typescript",
   "author": "Steven R Gilliam Jr <steve@steveg.dev>",
+  "keywords": [
+    "node",
+    "typescript",
+    "prisma",
+    "graphql-yoga",
+    "graphql",
+    "docker"
+  ],
   "main": "build/index.js",
   "scripts": {
+    "setup": "./scripts/setup.sh",
     "start": "npm run serve",
     "build": "tsc && npm run lint",
     "docker:build": "docker build -t ${npm_package_name}:${npm_package_version} .",
     "docker:run": "docker run --rm ${npm_package_name}:${npm_package_version}",
     "serve": "node build/index.js",
+    "prisma:deploy": "prisma deploy -p prisma/schema.prisma",
     "lint": "tsc --noEmit && eslint \"**/*.{js,ts}\" --quiet --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "@prisma/client": "^2.0.0-beta.1",
     "async": "^3.1.0",
+    "dotenv": "^8.2.0",
+    "graphql": "^15.0.0",
     "tslib": "^1.11.1"
   },
-  "keywords": [
-    "node",
-    "typescript",
-    "prisma",
-    "apollo-server",
-    "graphQL",
-    "docker"
-  ],
   "license": "MIT",
   "devDependencies": {
+    "@prisma/cli": "^2.0.0-beta.1",
     "@types/node": "^13.11.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-plugin-import": "^2.20.2",
     "ts-node": "^8.8.2",
-    "typescript": "^3.8.3"
+    "typescript": "^3.8.3",
+    "wait-on": "^4.0.1"
   }
 }

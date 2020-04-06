@@ -1,0 +1,18 @@
+type Migration @db(name: "_Migration") {
+  revision: Int! @id(strategy: SEQUENCE) @sequence(name: "_Migration_revision_seq", initialValue: 1, allocationSize: 1)
+  applied: Int!
+  databaseMigration: String! @db(name: "database_migration")
+  datamodel: String!
+  datamodelSteps: String! @db(name: "datamodel_steps")
+  errors: String!
+  finishedAt: DateTime @db(name: "finished_at")
+  name: String!
+  rolledBack: Int! @db(name: "rolled_back")
+  startedAt: DateTime! @db(name: "started_at")
+  status: String!
+}
+
+type User {
+  id: Int! @id 
+  name: String!
+}

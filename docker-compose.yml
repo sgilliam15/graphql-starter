@@ -1,0 +1,28 @@
+version: "3"
+services:
+  prisma:
+    container_name: prisma2
+    build:
+      context: .
+      dockerfile: prisma.Dockerfile
+    environment:
+      - PRISMA_MANAGEMENT_API_SECRET=password
+      - POSTGRESQL_USER=docker_admin
+      - POSTGRESQL_PASSWORD=password
+    links:
+      - db
+    depends_on:
+      - db
+    ports:
+      - "4466:4466"
+    volumes:
+      - /prisma
+  db:
+    container_name: "postgresql_db"
+    build:
+      context: .
+      dockerfile: db.Dockerfile
+    ports:
+      - "5432:5432"
+volumes:
+  my_dbdata:

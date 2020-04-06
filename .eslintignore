@@ -5,3 +5,6 @@ build/*
 **/*.d.ts
 # custom definition files
 /src/types/
+
+# Prisma Generated Files
+prisma/generated/**/*
