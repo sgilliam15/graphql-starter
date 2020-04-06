@@ -1,5 +1,5 @@
 {
-  "name": "node-graphql-starter",
+  "name": "graphql-starter",
   "version": "1.0.0",
   "description": "Get Started with Prisma 2+ and Typescript",
   "author": "Steven R Gilliam Jr <steve@steveg.dev>",
@@ -7,7 +7,8 @@
     "node",
     "typescript",
     "prisma",
-    "graphql-yoga",
+    "apollo-server",
+    "postgresql",
     "graphql",
     "docker"
   ],

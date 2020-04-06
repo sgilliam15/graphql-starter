@@ -1,10 +1,14 @@
-# node-graphql-starter
+# graphql-starter
 
 ## Quick Start
 
-### Setup
+1. Clone this repository:
 
-1. Build postgresqldb and prisma containers. You can build your docker images using the command
+```bash
+$ https://github.com/sgilliam15/graphql-starter.git
+```
+
+2. Build postgresqldb and prisma containers. You can build your docker images using the command
 
 ```bash
 $ yarn docker:build
@@ -12,7 +16,7 @@ $ yarn docker:build
 
 The images created by the build will be tagged with the name and version of your project as specified in the package.json.
 
-2. In `./prisma/schema.prisma` define the desired schema as a Prisma data model. The defualt schema has only a User model.
+3. In `./prisma/schema.prisma` define the desired schema as a Prisma data model. The defualt schema has only a User model.
 
 ```prisma
 model User {
