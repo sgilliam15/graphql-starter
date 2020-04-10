@@ -1,9 +1,0 @@
-datasource postgresql {
-  provider = "postgresql"
-  url = "***"
-}
-
-model User {
-  id   Int    @id
-  name String
-}

@@ -14,13 +14,16 @@
   ],
   "main": "build/index.js",
   "scripts": {
+    "clean": "rm -rf build",
     "setup": "./scripts/setup.sh",
-    "start": "npm run serve",
+    "start": "node build/index.js",
+    "dev": "ts-node src/index.ts",
     "build": "tsc && npm run lint",
     "docker:build": "docker build -t ${npm_package_name}:${npm_package_version} .",
     "docker:run": "docker run --rm ${npm_package_name}:${npm_package_version}",
-    "serve": "node build/index.js",
-    "prisma:deploy": "prisma deploy -p prisma/schema.prisma",
+    "generate": "yarn -s run generate:prisma && generate:nexus",
+    "generate:prisma": "yarn prisma generate",
+    "generate:nexus": "ts-node src/generate-nexus.js",
     "lint": "tsc --noEmit && eslint \"**/*.{js,ts}\" --quiet --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -30,10 +33,14 @@
     }
   },
   "dependencies": {
+    "@nexus/schema": "^0.13.1",
     "@prisma/client": "^2.0.0-beta.1",
+    "apollo-server": "^2.11.0",
     "async": "^3.1.0",
     "dotenv": "^8.2.0",
     "graphql": "^15.0.0",
+    "nexus": "^0.12.0",
+    "nexus-prisma": "^0.12.0",
     "tslib": "^1.11.1"
   },
   "license": "MIT",

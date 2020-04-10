@@ -2,14 +2,9 @@ generator client {
   provider = "prisma-client-js"
 }
 
-generator graphql {
-  provider = "prisma-client-grapqhl"
-  output   = "../schema.graphql"
-}
-
 datasource postgresql {
   provider = "postgresql"
-  url      = "postgresql://docker_admin:password@localhost:5432/postgresql_db?schema=public"
+  url = "***"
 }
 
 model User {

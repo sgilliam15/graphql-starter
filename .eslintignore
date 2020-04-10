@@ -4,7 +4,8 @@ build/*
 # data definition files
 **/*.d.ts
 # custom definition files
-/src/types/
-
+/src/schema.ts
+/src/generate-nexus.ts
 # Prisma Generated Files
 prisma/generated/**/*
+generate-nexus.js
