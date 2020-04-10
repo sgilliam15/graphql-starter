@@ -3,4 +3,4 @@
 yarn prisma migrate save --name "Basic User Init" --experimental
 yarn prisma migrate up --experimental
 yarn prisma introspect
-yarn prisma generate
+yarn generate
